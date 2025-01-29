@@ -1,9 +1,9 @@
-import { Flex, Text, Button } from '@radix-ui/themes'
+import { Flex } from '@radix-ui/themes'
+import { Button } from '@/components/atoms/button'
 
 export default function MyApp() {
   return (
     <Flex direction="column" gap="2">
-      <Text>Hello from Radix Themes</Text>
       <Button>Lets go</Button>
     </Flex>
   )
