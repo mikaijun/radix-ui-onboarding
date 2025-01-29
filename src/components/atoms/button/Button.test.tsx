@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { Button } from './Button'
+import { Button } from '@atoms/button'
 
 describe('Button component', () => {
   it('calls onClick when clicked', () => {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
-import { Input } from './Input'
+import { Input } from '@atoms/input'
 
 const meta: Meta<typeof Input> = {
   title: 'Atoms/Input',

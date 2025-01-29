@@ -1,7 +1,7 @@
 import { TextField } from '@radix-ui/themes'
 import React from 'react'
 
-type InputProps = {
+export type InputProps = {
   placeholder?: string
   size?: '1' | '2' | '3'
   icon?: React.ReactNode

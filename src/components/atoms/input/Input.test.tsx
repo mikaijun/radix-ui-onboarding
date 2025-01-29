@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons'
 import { describe, it, expect } from 'vitest'
 import React from 'react'
-import { Input } from './Input'
+import { Input } from '@atoms/input'
 
 describe('Input component', () => {
   it('renders without crashing', () => {
