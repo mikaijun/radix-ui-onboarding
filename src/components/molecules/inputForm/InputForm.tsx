@@ -1,26 +1,26 @@
 import React from 'react'
-import { UseFormRegisterReturn } from 'react-hook-form'
 import { Text } from '@radix-ui/themes'
 import { Input, InputProps } from '@atoms/input'
 
 type InputFormProps = InputProps & {
-  register: UseFormRegisterReturn
   errorMessage?: string
 }
 
 export const InputForm: React.FC<InputFormProps> = ({
-  placeholder,
-  register,
   errorMessage,
+  ...props
 }) => {
   return (
-    <>
-      <Input placeholder={placeholder} {...register} />
+    <div>
+      <Input {...props} />
       {errorMessage && (
-        <Text style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}>
+        <Text
+          as="p"
+          style={{ color: 'red', fontSize: '12px', marginTop: '4px' }}
+        >
           {errorMessage}
         </Text>
       )}
-    </>
+    </div>
   )
 }

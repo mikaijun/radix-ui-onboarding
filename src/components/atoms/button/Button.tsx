@@ -3,9 +3,14 @@ import React from 'react'
 
 type ButtonProps = {
   children: React.ReactNode
+  type?: 'button' | 'submit' | 'reset'
   onClick?: () => void
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return <RadixButton onClick={onClick}>{children}</RadixButton>
+export const Button: React.FC<ButtonProps> = ({ children, type, onClick }) => {
+  return (
+    <RadixButton onClick={onClick} style={{ cursor: 'pointer' }} type={type}>
+      {children}
+    </RadixButton>
+  )
 }
