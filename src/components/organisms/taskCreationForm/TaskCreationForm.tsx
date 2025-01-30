@@ -14,7 +14,7 @@ const schema = v.object({
   ),
 })
 
-type TaskCreationFormData = {
+export type TaskCreationFormData = {
   task: string
 }
 
@@ -29,15 +29,21 @@ export const TaskCreationForm: React.FC<TaskCreationFormProps> = ({
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<TaskCreationFormData>({
     mode: 'onBlur',
     resolver: valibotResolver(schema),
   })
 
+  const handleFormSubmit = (data: TaskCreationFormData) => {
+    onSubmit(data)
+    reset()
+  }
+
   return (
     <Form.Root
       data-testid="task-form"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(handleFormSubmit)}
       style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}
     >
       <InputForm
