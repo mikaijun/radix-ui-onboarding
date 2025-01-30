@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text } from '@radix-ui/themes'
 
-type ToggleThroughTextProps = {
+export type ToggleThroughTextProps = {
   value: string
   isLineThrough: boolean
   onClick: () => void

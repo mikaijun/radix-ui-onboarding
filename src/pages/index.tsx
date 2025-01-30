@@ -1,12 +1,12 @@
 // TODO: 仮で画面実装している
 import React, { useState } from 'react'
-import { Box, Checkbox, Flex } from '@radix-ui/themes'
+import { Box } from '@radix-ui/themes'
 import { Button } from '@/components/atoms/button/Button'
 import {
   TaskCreationForm,
   TaskCreationFormData,
 } from '@/components/organisms/taskCreationForm'
-import { ToggleThroughText } from '@/components/atoms/toggleThroughText'
+import { CheckThroughText } from '@/components/molecules/checkThroughText'
 
 interface Todo {
   id: number
@@ -37,33 +37,22 @@ const TodoList: React.FC = () => {
     <Box>
       <h1>TODO List</h1>
       <TaskCreationForm onSubmit={handleAddTask} />
-      <ul>
-        {todos.map((todo) => (
-          <li
-            key={todo.id}
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Flex align="center" gap="8px">
-              <Checkbox
-                checked={todo.completed}
-                onCheckedChange={() => handleToggleComplete(todo.id)}
-                style={{
-                  cursor: 'pointer',
-                }}
-              />
-              <ToggleThroughText
-                isLineThrough={todo.completed}
-                onClick={() => handleToggleComplete(todo.id)}
-                value={todo.task}
-              />
-            </Flex>
-            <Button onClick={() => handleDeleteTask(todo.id)}>X</Button>
-          </li>
-        ))}
-      </ul>
+      {todos.map((todo) => (
+        <Box
+          key={todo.id}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}
+        >
+          <CheckThroughText
+            isLineThrough={todo.completed}
+            onClick={() => handleToggleComplete(todo.id)}
+            value={todo.task}
+          />
+          <Button onClick={() => handleDeleteTask(todo.id)}>X</Button>
+        </Box>
+      ))}
     </Box>
   )
 }
