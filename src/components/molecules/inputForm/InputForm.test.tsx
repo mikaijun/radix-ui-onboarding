@@ -3,6 +3,8 @@ import { describe, it, expect, vi, afterEach } from 'vitest'
 import React from 'react'
 import { InputForm } from './InputForm'
 
+const PLACEHOLDER = 'text value'
+
 describe('InputForm component', () => {
   const mockRegister = {
     name: 'email',
@@ -15,24 +17,24 @@ describe('InputForm component', () => {
     cleanup()
   })
 
-  it('renders without crashing', () => {
-    render(<InputForm placeholder="Enter text" register={mockRegister} />)
-    expect(screen.getByPlaceholderText('Enter text')).toBeTruthy()
+  it('レンダリングされる', () => {
+    render(<InputForm placeholder={PLACEHOLDER} register={mockRegister} />)
+    expect(screen.getByPlaceholderText(PLACEHOLDER)).toBeTruthy()
   })
 
-  it('displays an error message when provided', () => {
+  it('エラーメッセージが提供されたときに表示される', () => {
     render(
       <InputForm
         errorMessage="Error message"
-        placeholder="Enter text"
+        placeholder={PLACEHOLDER}
         register={mockRegister}
       />
     )
     expect(screen.getByText('Error message')).toBeTruthy()
   })
 
-  it('does not render an error message when not provided', () => {
-    render(<InputForm placeholder="Enter text" register={mockRegister} />)
+  it('エラーメッセージが提供されない場合は表示されない', () => {
+    render(<InputForm placeholder={PLACEHOLDER} register={mockRegister} />)
     expect(screen.queryByText('Error message')).toBeNull()
   })
 })

@@ -5,7 +5,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { Button } from '@atoms/button'
 
 describe('Button component', () => {
-  it('calls onClick when clicked', () => {
+  it('クリックされたときにonClickが呼び出される', () => {
     const handleClick = vi.fn()
     render(<Button onClick={handleClick}>Click me</Button>)
 

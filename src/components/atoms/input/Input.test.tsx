@@ -11,13 +11,13 @@ describe('Input component', () => {
     onBlur: vi.fn(),
     ref: vi.fn(),
   }
-  it('renders without crashing', () => {
-    render(<Input placeholder="Enter text" register={mockRegister} />)
-    const inputElement = screen.getByPlaceholderText('Enter text')
+  it('正しくレンダリングされる', () => {
+    render(<Input placeholder="テキストを入力" register={mockRegister} />)
+    const inputElement = screen.getByPlaceholderText('テキストを入力')
     expect(inputElement).not.toBeNull()
   })
 
-  it('renders with an icon', () => {
+  it('アイコンが表示される', () => {
     render(<Input icon={<MagnifyingGlassIcon />} register={mockRegister} />)
     const iconElement = screen.queryByTestId('icon')
     expect(!!iconElement && !!iconElement).toBe(true)
