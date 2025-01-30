@@ -1,15 +1,14 @@
-import { Button as RadixButton } from '@radix-ui/themes'
+import {
+  Button as RadixButton,
+  ButtonProps as RadixButtonProps,
+} from '@radix-ui/themes'
 import React from 'react'
 
-type ButtonProps = {
-  children: React.ReactNode
-  type?: 'button' | 'submit' | 'reset'
-  onClick?: () => void
-}
+type ButtonProps = RadixButtonProps
 
-export const Button: React.FC<ButtonProps> = ({ children, type, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
   return (
-    <RadixButton onClick={onClick} style={{ cursor: 'pointer' }} type={type}>
+    <RadixButton style={{ cursor: 'pointer' }} {...props}>
       {children}
     </RadixButton>
   )

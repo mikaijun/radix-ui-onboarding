@@ -6,7 +6,7 @@ import {
   ToggleThroughTextProps,
 } from '@atoms/toggleThroughText'
 
-type CheckThroughTextProps = ToggleThroughTextProps
+export type CheckThroughTextProps = ToggleThroughTextProps
 
 export const CheckThroughText: React.FC<CheckThroughTextProps> = ({
   value,

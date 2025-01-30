@@ -1,12 +1,12 @@
 // TODO: 仮で画面実装している
 import React, { useState } from 'react'
 import { Box } from '@radix-ui/themes'
-import { Button } from '@/components/atoms/button/Button'
+import { Button } from '@atoms/button/Button'
 import {
   TaskCreationForm,
   TaskCreationFormData,
-} from '@/components/organisms/taskCreationForm'
-import { CheckThroughText } from '@/components/molecules/checkThroughText'
+} from '@organisms/taskCreationForm'
+import { CheckThroughText } from '@molecules/checkThroughText'
 
 interface Todo {
   id: number
@@ -50,7 +50,7 @@ const TodoList: React.FC = () => {
             onClick={() => handleToggleComplete(todo.id)}
             value={todo.task}
           />
-          <Button onClick={() => handleDeleteTask(todo.id)}>X</Button>
+          <Button onClick={() => handleDeleteTask(todo.id)}>削除</Button>
         </Box>
       ))}
     </Box>
