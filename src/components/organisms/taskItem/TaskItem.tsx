@@ -41,7 +41,11 @@ export const TaskItem: React.FC<TaskItemProps> = ({
         onClick={handleToggle}
         value={value}
       />
-      <Button color="red" data-testid="trash" onClick={handleDeleteTask}>
+      <Button
+        color="red"
+        data-testid={`trash-${id}`}
+        onClick={handleDeleteTask}
+      >
         <FaRegTrashAlt />
       </Button>
     </Box>

@@ -47,7 +47,7 @@ describe('TaskItem', () => {
   it('削除ボタンがクリックされたときにタスクが削除されることを確認', () => {
     const { mockOnDelete } = setup()
 
-    const deleteButton = screen.queryByTestId('trash')
+    const deleteButton = screen.queryByTestId(`trash-${TASK_ID}`)
     expect(deleteButton).not.toBeNull()
     if (deleteButton) {
       fireEvent.click(deleteButton)

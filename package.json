@@ -21,15 +21,28 @@
       "vitest run"
     ]
   },
+  "imports": {
+    "#useQueryTask": {
+      "storybook": "./src/components/pages/taskList/TaskList.mock.ts",
+      "default": "./src/components/pages/taskList/TaskList.api.tsx"
+    },
+    "#*": [
+      "./*",
+      "./*.ts",
+      "./*.tsx"
+    ]
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/themes": "^3.2.0",
+    "@tanstack/react-query": "^5.65.1",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "react-icons": "^5.4.0",
+    "remeda": "^2.20.0",
     "valibot": "^1.0.0-beta.14"
   },
   "devDependencies": {

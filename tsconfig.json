@@ -17,6 +17,10 @@
       "@atoms/*": ["./src/components/atoms/*"],
       "@molecules/*": ["./src/components/molecules/*"],
       "@organisms/*": ["./src/components/organisms/*"],
+      "@pages/*": ["./src/components/pages/*"],
+      "#useQueryTask": [
+        "./src/components/pages/taskList/TaskList.mock.ts"
+      ]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
